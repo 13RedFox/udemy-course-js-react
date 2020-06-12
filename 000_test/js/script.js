@@ -1,31 +1,21 @@
 'use strict';
 
-let num = 50;
+const str = 'TeSt';
 
-if (num < 49) {
-  console.log('Неверно!')
-} else if (num > 100) {
-  console.log('Многовато!')
-} else {
-  console.log('Это так!')
-}
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+console.log(str);
 
-(num === 50) ? console.log('Верно!') : console.log('Неверно!');
+const fruit = 'Some fruit';
+console.log(fruit.indexOf('fruit'));
 
-switch (num) {
-  case num < 49:
-    console.log('Неверно!');
-    break;
-  case num > 100:
-    console.log('Многовато!');
-    break;
-  case num > 80:
-    console.log('Все еще много!');
-    break;
-  case 50:
-    console.log('Верно');
-    break;
-  default:
-    console.log('Что-то пошло не так!');
-    break;
-}
+const logg = 'Hello world';
+console.log(logg.slice(0, 5));
+console.log(logg.substr(0, 5));
+
+const num = 12.2;
+console.log(Math.round(num));
+
+const test = '12.2px';
+console.log(parseInt(test));
+console.log(parseFloat(test));
