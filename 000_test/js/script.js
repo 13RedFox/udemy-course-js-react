@@ -222,7 +222,7 @@ const newObj = {...q};
 */
 
 // ! Основы ООП
-
+/*
 let str = 'some';
 let strObj = new String(str);
 
@@ -251,3 +251,115 @@ Object.setPrototypeOf(john, soldier); // ! Эта запись идентичн�
 
 console.log(john);
 john.sayHello();
+*/
+
+// ! Динамическая типизация
+/*
+// ? To string
+
+// * 1)
+console.log(typeof(String(null))); // * string
+console.log(typeof(String(4))); // * string
+
+// * 2)
+console.log(typeof( 5 + '')); // * string При сложении со строкой получается строка.
+
+const num = 5;
+console.log('https://vk.com/catalog/' + num); //  https://vk.com/catalog/5
+
+const fontSize = 26 + 'px'; // * '26px'
+
+// ? To number
+
+// * 1)
+console.log(typeof(Number('4'))); // * number
+
+// * 2)
+console.log(typeof(+'5')); // * number
+
+// * 3)
+console.log(typeof(parseInt('15px', 10))); // * number
+
+let answ = +prompt('Hello', ''); // * для введения чисел ставится знак + перед свойством +prompt()...
+
+// ? To boolean
+
+// * Всегда будет false:
+// ! 0, '', null, undefined, NaN = false;
+
+// * 1)
+let switcher = null;
+
+if (switcher) { // switther = null => false и программа не запуститься.
+  console.log('Working...');
+}
+
+switcher = 1;
+
+if (switcher) { // switther = 1 => true и программа запуститься.
+  console.log('Working...');
+}
+
+// * 2)
+console.log(typeof(Boolean('4'))); // * boolean Используют практически некогда!
+
+// * 3)
+console.log(typeof(!!'44444')); // * boolean Очень редкий прием, можно встретить в единичных скриптах.
+*/
+
+// ! Получение информации со страницы DOM
+/*
+
+// * Старые методы использования
+const box = document.getElementById('box');
+const btns = document.getElementsByTagName('button');
+const circle = document.getElementsByClassName('circle');
+const wrapper = document.querySelector('.wrapper');
+
+console.log(box);
+console.log(btns[1]);
+console.log(circle);
+
+// *  Новые методы использования
+const hearts = document.querySelectorAll('.heart');
+
+hearts.forEach(item => {
+  console.log(item);
+});
+
+const oneHeart = document.querySelector('.heart');
+console.log(oneHeart);
+
+box.style.backgroundColor = 'yellow';
+box.style.width = '500px';
+
+box.style.cssText = 'background-color: blue; height: 100px;'
+
+btns[1].style.borderRadius = '100%';
+circle[0].style.backgroundColor = 'red';
+
+// for (let i = 0; i < hearts.length; i++) {
+//   hearts[i].style.backgroundColor = 'green';
+// }
+
+hearts.forEach(item => {
+  item.style.backgroundColor = 'yellow';
+});
+
+const div = document.createElement('div');
+// ! const text = document.createTextNode('Тут был я'); // * этот элемент используется очень редко!
+
+div.classList.add('black');
+
+wrapper.append(div); // * в конец родителя помещает див
+// wrapper.appendChild(div); // * Старый метод
+// wrapper.prepend(div); // * в начало родителя помещает див
+circle[0].remove();
+
+hearts[0].replaceWith(circle[0]);
+
+div.innerHTML = '<h1>Hello world</h1>'; // * Работает и с текстом и с тегами
+// div.textContent = 'Hello'; // * Работает только с текстом
+
+div.insertAdjacentHTML('beforebegin', '<h2>Hello</h2>'); // * beforebegin, afterbegin, beforeend, afterend
+*/
