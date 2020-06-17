@@ -363,3 +363,5 @@ div.innerHTML = '<h1>Hello world</h1>'; // * Работает и с тексто
 
 div.insertAdjacentHTML('beforebegin', '<h2>Hello</h2>'); // * beforebegin, afterbegin, beforeend, afterend
 */
+
+
