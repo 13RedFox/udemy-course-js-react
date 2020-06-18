@@ -363,5 +363,39 @@ div.innerHTML = '<h1>Hello world</h1>'; // * Работает и с тексто
 
 div.insertAdjacentHTML('beforebegin', '<h2>Hello</h2>'); // * beforebegin, afterbegin, beforeend, afterend
 */
+// ! .classList и Делегирование событий!
+// ? .classList
 
+const btns = document.querySelectorAll('button'),
+      wrapper = document.querySelector('.btn-block');
 
+// console.log(btns[0].classList.length);
+// console.log(btns[0].classList.item(1));
+// console.log(btns[1].classList.add('pink'));
+// console.log(btns[0].classList.remove('blue'));
+// console.log(btns[0].classList.toggle('blue'));
+//
+// if (btns[1].classList.contains('pink')) {
+//   console.log('pink');
+// }
+
+btns[0].addEventListener('click', () => {
+  // if (!btns[1].classList.contains('pink')) {
+  //   btns[1].classList.add('pink');
+  // } else {
+  //   btns[1].classList.remove('pink');
+  // }
+  // ! такое же действие делает как и в условии выше
+  btns[1].classList.toggle('pink');
+})
+
+// ? Делегирование событий
+wrapper.addEventListener('click', (event) => {
+  if (event.target && event.target.tagName == 'BUTTON') {
+    console.log('Hello')
+  }
+});
+
+const btn = document.createElement('button');
+btn.classList.add('pink');
+wrapper.append(btn);

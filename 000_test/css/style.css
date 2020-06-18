@@ -13,6 +13,9 @@
 button {
     width: 50px;
     height: 30px;
+    background: darkcyan;
+    border: none;
+    border-radius: 5px;
 }
 
 .heart {
@@ -26,3 +29,12 @@ button {
     background: black;
     color: lawngreen;
 }
+
+.blue {
+    background: deepskyblue;
+}
+.pink {
+    background: deeppink;
+}
+
+
